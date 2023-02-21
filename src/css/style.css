@@ -1,0 +1,13 @@
+.hidden {
+  display: none;
+}
+
+.alerts {
+  pointer-events: none;
+  position: fixed;
+  max-width: 500px;
+  width: 90%;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
