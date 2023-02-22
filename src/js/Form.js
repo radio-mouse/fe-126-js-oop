@@ -1,5 +1,4 @@
 class Form {
-
   clear() {
     this.node[0].value = '';
     this.node[1].value = '5';
