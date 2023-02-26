@@ -11,3 +11,31 @@
   left: 50%;
   transform: translateX(-50%);
 }
+
+.edit-modal {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #0005;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-modal.hidden {
+  display: none;
+}
+
+.edit-modal__body {
+  max-width: 500px;
+  width: 100%;
+  border-radius: 24px;
+  position: relative;
+}
+.cancel {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}

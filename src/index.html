@@ -72,6 +72,50 @@
     <div class="alert hidden" role="alert" id="alert">
     </div>
   </section>
+  <div id="modal" class="edit-modal hidden">
+    <div class="edit-modal__body bg-dark text-white p-4">
+      <section class="py-4">
+        <button id="edit-cancel" class="btn btn-secondary cancel">Close</button>
+        <form id="edit-form" class="py-4">
+          <div class="row py-2">
+            <div class="col-8">
+              <label for="add-title" class="form-label">Movie title</label>
+              <input type="text" class="form-control" id="add-title" placeholder="The Shawshank Redemption">
+            </div>
+            <div class="col-4">
+              <label for="add-rating" class="form-label">Movie rating</label>
+              <select class="form-select" id="add-rating">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5" selected>5</option>
+              </select>
+            </div>
+          </div>
+          <div class="row py-2">
+            <div class="col-12">
+              <label for="add-thoughts" class="form-label">Your thoughts</label>
+              <textarea class="form-control" id="add-thoughts" placeholder="This movie was..." rows="3"></textarea>
+            </div>
+          </div>
+          <div class="row py-2">
+            <div class="col-6">
+              <button class="btn btn-primary" type="submit">Save</button>
+            </div>
+            <div class="col-6">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="add-favorites">
+                <label class="form-check-label" for="add-favorites">
+                  To favorites
+                </label>
+              </div>
+            </div>
+          </div>
+        </form>
+      </section>
+    </div>
+  </div>
   <script type="module" src="./js/app.js"></script>
 </body>
 </html>
