@@ -2,6 +2,7 @@ import Alert from './Alert';
 import Form from './Form';
 import Movie from './Movie';
 import Table from './Table';
+import Storage from './Storage';
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = new Form();
@@ -11,16 +12,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const onAdd = () => {
     try {
       const data = form.getData();
-      const movie = new Movie(data);
+      const movie = new Movie(Date.now(), data);
 
-      movie.deleteBtn.addEventListener('click', () => table.removeMovie(movie.getId()));
       form.clear();
       table.addMovie(movie);
+      Storage.setData(table.getMovies());
       alert.showAlert('Movie was successfully added!!!');
     } catch ({ message }) {
       alert.showAlert(message, true);
     }
-  }
+  };
 
   form.node.addEventListener('submit', (e) => {
     e.preventDefault();

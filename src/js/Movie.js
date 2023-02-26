@@ -4,6 +4,11 @@ class Movie {
 
   setData(data) {
     this.#data = data;
+
+    this.node.querySelector('.movie-title').innerHTML = data.title;
+    this.node.querySelector('.movie-rating').innerHTML = data.rating;
+    this.node.querySelector('.movie-thoughts').innerHTML = data.thoughts;
+    this.node.querySelector('.movie-isFavorite').innerHTML = data.isFavorite ? '⭐' : '';
   }
 
   getData() {
@@ -30,10 +35,10 @@ class Movie {
 
     const tr = document.createElement('tr');
     const html = `
-      <th scope="row">${title}</th>
-      <td>${rating}</td>
-      <td>${thoughts}</td>
-      <td>${isFavorite ? '⭐' : ''}</td>
+      <th class="movie-title" scope="row">${title}</th>
+      <td class="movie-rating">${rating}</td>
+      <td class="movie-thoughts">${thoughts}</td>
+      <td class="movie-isFavorite">${isFavorite ? '⭐' : ''}</td>
       <td>
         <div class="btn-group" role="group">
         </div>
@@ -53,10 +58,10 @@ class Movie {
     this.editBtn = editButton;
   }
 
-  constructor(data) {
-    this.#id = Date.now();
-    this.setData(data);
+  constructor(id, data) {
+    this.#id = id;
     this.setNode();
+    this.setData(data);
   }
 }
 
